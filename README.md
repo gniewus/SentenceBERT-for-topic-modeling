@@ -11,10 +11,21 @@ The goal of the project was to design as fast and scalable topic tracking and de
 Presentation explaining the project: \
 [<img src="./img/video.png" data-canonical-src="./img/video.png" width="600" />](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Talk")
 
+### Thesis abstract
+Topic modeling analyzes documents to learn meaningful patterns and extract the hidden semantic structure in a collection of documents. Unfortunately, classical topic models do not scale easily and often fail when working with massive corpora and vocabularies. Furthermore, most of the algorithms are suited for static analysis and require frequent and expensive retraining to cover up-to-date events. 
+This master's thesis aims to address the above-mentioned limitations and develop an unsupervised approach to on-line topic modeling and detection based on document clustering. The main contribution of this work is a framework for continuous labeling of incoming news articles with new topics as they arise.
+The introduced method measures the similarities between news articles utilizing a pretrained Siamese BERT network that derive semantically meaningful document embeddings. These embeddings after post-processing form the input to the clustering algorithm which groups similar articles together and summarizes the clusters using keyword extraction algorithm. The proposed method can be used to model topics in both static (fixed set of articles) and incremental settings. 
+While it is apparent that the proposed method can scale well for millions of articles, it is required to perform a comprehensive evaluation to confirm that this solution can work well on both benchmark and real-world datasets.   Therefore, in order to validate the approach the author aims to use benchmark datasets of news articles in German language. Furthermore, the framework is to be tested in a real-life scenario on a growing set of articles from a well-known German news portal - `BILD.de`.
+The scope of the evaluation is to demonstrate that the proposed system achieves high performance in terms of both accuracy of topic labeling  and topic interpretability compared to the classical topic modeling algorithms.  Finally, it will be assessed if the proposed method can effectively assign an interpretive topic label in a human-understandable way. 
+
+
 ## Colab Examples
 
 ## Data
-The data was collected using RSS Feed and simple scraping scripts inspired by [BildMining](https://github.com/Frank86ger/BildMining)
+In the `data` directory you can find scripts and datasets used while working on that project. 
+- `labeled_test_clustes.csv` - contains 500 articles with manually assosiated topic labels.
+- 
+FIY. Articles data was collected using RSS Feed and simple scraping scripts inspired by [BildMining](https://github.com/Frank86ger/BildMining)
 ## Notebooks
 
 

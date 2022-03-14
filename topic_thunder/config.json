@@ -1,0 +1,34 @@
+{
+    "bucket_name": "ci-topic-thunder",
+    "model": {
+        "model_name": "T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb"
+    },
+    "umap": {
+        "main_model_s3_path": "umap/umap_50k_19-neighbors_32-comps.pkl",
+        "parameters": {
+            "n_neighbors": 19,
+            "min_dist": 0.01,
+            "n_components": 32,
+            "random_state": 0,
+            "metric": "cosine"
+        },
+        "location": "/var/tmp/models",
+        "s3_path": "umap"
+    },
+    "clustering": {
+        "HDBSCAN": {
+            "main_model_s3_path": "HDBSCAN/model.pkl",
+            "parameters": {
+                "min_cluster_size": 3,
+                "min_samples": 2,
+                "alpha": 1.0,
+                "cluster_selection_epsilon": 0.14,
+                "metric": "euclidean",
+                "cluster_selection_method": "leaf",
+                "approx_min_span_tree": true
+            },
+            "location": "/var/tmp/models",
+            "s3_path": "HDBSCAN"
+        }
+    }
+}
