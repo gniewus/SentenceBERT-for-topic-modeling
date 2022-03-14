@@ -2,13 +2,14 @@
 Embedding-based topic modeling system for news articles
 
 
-One 
-[![Talk ](./img/video.png | width=100)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Talk")
 
 
-This repository stores the code and documentation for the Master Thesis project - "Design and evaluation of embedding-based topic modeling system for news articles"
+This repository stores the code and documentation for the Master Thesis project - _"Design and evaluation of embedding-based topic modeling system for news articles".
 The goal of the project was to design as fast and scalable topic tracking and detection system.  The system should be able to dynamcally create a new analytica dimensions for news articles - topics. 
 
+
+Presentation explaining the project: \
+[<img src="./img/video.png" data-canonical-src="./img/video.png" width="600" />](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Talk")
 
 ## Colab Examples
 
