@@ -1,8 +1,6 @@
 # SentenceBERT for Topic modeling
 Embedding-based topic modeling system for news articles
 
-
-
 ## Idea
 ![design](./img/RED_NEW.png)
 
@@ -34,8 +32,14 @@ In the `data` directory you can find scripts and datasets used while working on 
 - labeled_test_clusters.csv	- contains 500 labeled articles (20 Clusters). Used for parameter search and evaluation of the clustering performance.
 FIY. Articles data was collected using RSS Feed and simple scraping scripts inspired by [BildMining](https://github.com/Frank86ger/BildMining)
 ## Notebooks
+Notebook directory contains multiple notebooks with experiments and presentations of the results.
+- BertTopic_Presentation.ipynb -  
 
 
+## Prefect
+In the prefect directory you will find the production-ready implementation of the pipeline using Prefect. You will need to set up a database(Docker), and load your first batch of articles. 
+
+Follow the instructions in the Readme inside.
 
 ## Analitical dashboard
 In the `dash` folder you can see an inmplementation of a dashboard presetning the results of topic modeling combined with performance data.
