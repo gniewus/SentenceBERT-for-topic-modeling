@@ -29,6 +29,18 @@ The scope of the evaluation is to demonstrate that the proposed system achieves 
 ## Data
 In the `data` directory you can find scripts and datasets used while working on that project. 
 - headlines-2016-deepl.csv - set of ca. 750 headline pairs from the SentEval dataset. Translated using DeepL. Can be used for fine-tuneing. [Original File](https://github.com/brmson/dataset-sts/blob/master/data/sts/semeval-sts/2016/headlines.test.tsv). Good for further fine-tuning of the SBERT model.
+- omp-articles-full.csv - a complete list of all the articles from the OMP dataset. It is combined with the count of comments using this query :
+```sql 
+
+select Articles.ID_Article as ID_Article, Path, publishingDate, Title, Body, comments
+from Articles
+         left join (select ID_Article, count(*) as comments
+                    from Posts
+                    where Status != 'deleted'
+                    group by ID_Article) as arts on Articles.ID_Article = arts.ID_Article
+
+```
+- omp-bert-results.csv - contains final results of the analysis.
 - labeled_test_clusters.csv	- contains 500 labeled articles (20 Clusters). Used for parameter search and evaluation of the clustering performance.
 FIY. Articles data was collected using RSS Feed and simple scraping scripts inspired by [BildMining](https://github.com/Frank86ger/BildMining)
 ## Notebooks
