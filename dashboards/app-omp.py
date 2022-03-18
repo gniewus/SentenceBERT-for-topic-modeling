@@ -299,15 +299,15 @@ def update_articles_preview(value, selected_rows, data, data_top_topics):
 
 
 
+
 def plot_wordcloud(d):
-    print(d)
+
     wc = WordCloud(background_color='rgb(50, 56, 62)', width=740, height=340)
     wc.fit_words(d)
     return wc.recolor(color_func=grey_color_func, random_state=3).to_image()
-
-
-@app.callback(Output('graph3','figure'),[Input("date-picker", "start_date"), Input("date-picker", "end_date")])
-def update_base_plot(start,end):
+    
+@app.callback(Output('graph3','figure'),[Input("date-picker", "start_date"), Input("date-picker", "end_date")],State('graph3', 'data'))
+def update_base_plot(start,end,data):
     print(start,end,'jjjj')
 
     if not start and not end:
